@@ -7,3 +7,5 @@
 install Klipper firmware.
     - Make sure to install Crowsnest plugin to enable camera streaming.
 
+2. Update config files accordingly, sample configs are provided for reference.
+
