@@ -1,0 +1,179 @@
+commands = {
+    "M110": {
+        "help": "Set the current line number"
+    },
+    "ECHO": {
+        "help": "Echo a string to the host"
+    },
+    "STATUS": {
+        "help": "Report the printer status"
+    },
+    "G1": {
+        "help": "Coordinated move"
+    },
+    "G20": {
+        "help": "Set units to inches"
+    },
+    "G21": {
+        "help": "Set units to millimeters"
+    },
+    "G90": {
+        "help": "Set to absolute positioning"
+    },
+    "G91": {
+        "help": "Set to relative positioning"
+    },
+    "G92": {
+        "help": "Set position"
+    },
+    "M220": {
+        "help": "Set feedrate percentage"
+    },
+    "M221": {
+        "help": "Set flow rate percentage"
+    },
+    "SET_GCODE_OFFSET": {
+        "help": "Set a virtual offset to g-code positions",
+        "Usage": "SET_GCODE_OFFSET Z_ADJUST=[move_distance] MOVE=1",
+    },
+    "SAVE_GCODE_STATE": {
+        "help": "Save G-Code coordinate state"
+    },
+    "RESTORE_GCODE_STATE": {
+        "help": "Restore a previously saved G-Code state"
+    },
+    "G0": {
+        "help": "Rapid move"
+    },
+    "M114": {
+        "help": "Get current position"
+    },
+    "GET_POSITION": {
+        "help": "Return information on the current location of the toolhead"
+    },
+    "SET_GCODE_VARIABLE": {
+        "help": "Set the value of a G-Code macro variable"
+    },
+    "_CLIENT_EXTRUDE": {
+        "help": "Extrudes, if the extruder is hot enough"
+    },
+    "_CLIENT_RETRACT": {
+        "help": "Retracts, if the extruder is hot enough"
+    },
+    "UPDATE_DELAYED_GCODE": {
+        "help": "Update the duration of a delayed_gcode"
+    },
+    "FORCE_MOVE": {
+        "help": "Manually move a stepper; invalidates kinematics"
+    },
+    "SET_KINEMATIC_POSITION": {
+        "help": "Force a low-level kinematic position"
+    },
+    "SAFE_HOME": {
+        "help": "G-Code macro"
+    },
+    "G28": {
+        "help": "Home all axes"
+    },
+    "PROBE": {
+        "help": "Probe Z-height at current XY position"
+    },
+    "QUERY_PROBE": {
+        "help": "Return the status of the z-probe"
+    },
+    "PROBE_CALIBRATE": {
+        "help": "Calibrate the probe's z_offset"
+    },
+    "PROBE_ACCURACY": {
+        "help": "Probe Z-height accuracy at current XY position"
+    },
+    "Z_OFFSET_APPLY_PROBE": {
+        "help": "Adjust the probe's z_offset"
+    },
+    "BED_MESH_OUTPUT": {
+        "help": "Retrieve interpolated grid of probed z-points"
+    },
+    "BED_MESH_MAP": {
+        "help": "Serialize mesh and output to terminal"
+    },
+    "BED_MESH_CLEAR": {
+        "help": "Clear the Mesh so no z-adjustment is made"
+    },
+    "BED_MESH_OFFSET": {
+        "help": "Add X/Y offsets to the mesh lookup"
+    },
+    "M105": {
+        "help": "Get current temperatures"
+    },
+    "TEMPERATURE_WAIT": {
+        "help": "Wait for a temperature on a sensor"
+    },
+    "QUERY_ADC": {
+        "help": "Report the last value of an analog pin"
+    },
+    "SET_HEATER_TEMPERATURE": {
+        "help": "Sets a heater temperature"
+    },
+    "M140": {
+        "help": "Set bed temperature"
+    },
+    "M190": {
+        "help": "Wait for bed temperature to reach target"
+    },
+    "M106": {
+        "help": "Set fan speed"
+    },
+    "M107": {
+        "help": "Turn fan off"
+    },
+    "SET_RETRACTION": {
+        "help": "Set firmware retraction parameters",
+        "Example use_firmware_retraction" : "RETRACT_LENGTH=2.0 RETRACT_SPEED=40 UNRETRACT_EXTRA_LENGTH=0.0 UNRETRACT_SPEED=40"
+
+    },
+    "GET_RETRACTION": {
+        "help": "Report firmware retraction parameters"
+    },
+    "G10": {
+        "help": "Retract filament"
+    },
+    "G11": {
+        "help": "Unretract filament"
+    },
+    "M18": {
+        "help": "Disable all stepper motors"
+    },
+    "M84": {
+        "help": "Disable all stepper motors"
+    },
+    "QUERY_ENDSTOPS": {
+        "help": "Report on the status of each endstop"
+    },
+    "M119": {
+        "help": "Get endstop status"
+    },
+    "G4": {
+        "help": "Dwell"
+    },
+    "M400": {
+        "help": "Finish all moves"
+    },
+    "M204": {
+        "help": "Set default acceleration"
+    },
+    "MANUAL_PROBE": {
+        "help": "Start manual probe helper script"
+    },
+    "TUNING_TOWER": {
+        "help": "Tool to adjust a parameter at each Z height"
+    },
+    "SET_PRESSURE_ADVANCE": {
+        "help": "Set pressure advance parameters"
+    },
+    "M104": {
+        "help": "Set extruder temperature"
+    },
+    "M109": {
+        "help": "Wait for extruder temperature to reach target"
+    },
+}

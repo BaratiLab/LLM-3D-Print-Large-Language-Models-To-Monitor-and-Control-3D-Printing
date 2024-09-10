@@ -1,0 +1,83 @@
+commands = {
+    "BED_MESH_MAP": {
+        "description": "Serialize mesh and output to terminal"
+    },
+    "BED_MESH_OFFSET": {
+        "description": "Add X/Y offsets to the mesh lookup"
+    },
+    "BED_MESH_OUTPUT": {
+        "description": "Retrieve interpolated grid of probed z-points"
+    },
+    "GET_RETRACTION": {
+        "description": "Report firmware retraction parameters"
+    },
+    "PROBE": {
+        "description": "Probe Z-height at current XY position"
+    },
+    "PROBE_ACCURACY": {
+        "description": "Probe Z-height accuracy at current XY position"
+    },
+    "PROBE_CALIBRATE": {
+        "description": "Calibrate the probe's z_offset"
+    },
+    "QUERY_ADC": {
+        "description": "Report the last value of an analog pin"
+    },
+    "QUERY_ENDSTOPS": {
+        "description": "Report on the status of each endstop"
+    },
+    "QUERY_PROBE": {
+        "description": "Return the status of the z-probe"
+    },
+    "M115": {
+        "description": "Request firmware capabilities and version"
+    },
+    "STATUS": {
+        "description": "Report the printer status"
+    },
+    "SAVE_GCODE_STATE": {
+        "description": "Save G-Code coordinate state"
+    },
+    "RESTORE_GCODE_STATE": {
+        "description": "Restore a previously saved G-Code state"
+    },
+    "G0": {
+        "description": "Rapid move"
+    },
+    "M114": {
+        "description": "Get current position"
+    },
+    "GET_POSITION": {
+        "description": "Return information on the current location of the toolhead"
+    },
+    "PROBE": {
+        "description": "Probe Z-height at current XY position"
+    },
+    "QUERY_PROBE": {
+        "description": "Return the status of the z-probe"
+    },
+    "PROBE_CALIBRATE": {
+        "description": "Calibrate the probe's z_offset"
+    },
+    "PROBE_ACCURACY": {
+        "description": "Probe Z-height accuracy at current XY position"
+    },
+    "Z_OFFSET_APPLY_PROBE": {
+        "description": "Adjust the probe's z_offset"
+    },
+    "M105": {
+        "description": "Get current temperatures"
+    },
+    "TEMPERATURE_WAIT": {
+        "description": "Wait for a temperature on a sensor"
+    },
+    "GET_RETRACTION": {
+        "description": "Report firmware retraction parameters"
+    },
+    "M119": {
+        "description": "Get endstop status"
+    },
+    "M400": {
+        "description": "Finish all moves"
+    }
+}

@@ -1,0 +1,201 @@
+{
+    "system_prompt_eyes": {
+        "role": "system",
+        "content": [
+            {
+                "type": "text",
+                "text": "You are an expert in 3D printing. This is an image of an ongoing 3D print taken from the top camera looking at the current state of the print. The printer is paused. The print is of a 1 layer square, you will rate the quality of the print and use your experience to identify the most prominent and most probable visible failure mode that can be corrected by adjusting the print parameters. The goal is to improve the subsequent print segment without discarding the current print.\n\nList only the issues in order of prominence and visibility. Provide your answer only in the following format:\n\n\"Problems found/No problems found (depending on if a failure was identified)\nObservations:\nFailure modes:\nPrint Rating: [number out of 10]\""
+            }
+        ]
+    },
+
+    "recon_reasoning":{
+        "reasoning":
+        [   
+            "1. What are the possible reasons for the failure?",
+            "2. How to solve the problem in the next layer without human intervention?",
+            "3. What information do you already know?",
+            "4. What additional information do you need to solve the task effectively and autonomously?",
+            "5. What information can be acquired from the basic 3D printer without human intervention to identify the cause of failure?",
+            "6. What information can be requires human intervention?",
+            "7. What are the environmental conditions?",
+            "8. What are the controlable parameters that can be changed to solve the failure in the next layer?"
+
+        ]
+    },
+
+    "solution_reasoning": {
+        "reasoning":
+        [   
+            "1. What are the possible reasons for the failure in the last layer?",
+            "2. Analyse the information and data do you already have regarding the documentation, print parameters and material properties during the failure? ",
+            "3. Given the current print parameters [given information known] as observed during the last last layer, what are the best parameters to adjust to solve the failure in the next layer without human intervention?",
+            "4. What are the controlable parameters that can be changed to solve the failure in the next layer?",
+            "5. How would you solve the problems without human intervention?",
+            "6. Break down the problem into smaller parts and identify the most significant contributing factors to the failure. Consider aspects such as material properties, print parameters and potential gcode commands to use.",
+            "7. What solution does human need to perform to solve the problem in the next layer without discarding the print?",
+            "8. What solution does the machine need to perform to solve the problem in the next layer without discarding the print?",
+            "9. Step by step instructions to solve the problem in the next layer without discarding the print or using human intervention.",
+            "10. Given the commands specific to the printer, what commands should be used to solve the problem in the next layer without discarding the print?"
+
+        ]
+    },
+
+    "printer_obj":
+    {
+        "objects": [
+            "gcode --> list of gcode commands",
+            "gcode_move --> speed_factor: current speed multiplier", "speed: current gcode speed in mm/s", "extrude_factor: extrusion multiplier", "absolute_coordinates: true if using absolute coordinates", "absolute_extrude: true if extruder uses absolute coordinates", "homing_origin: gcode offset applied to each axis [X, Y, Z, E]", "position: internal gcode position with offsets [X, Y, Z, E]", "gcode_position: current gcode position without offsets [X, Y, Z, E]",
+            "print_stats --> The 'print_stats' API endpoint, enabled with 'virtual_sdcard' in printer.cfg, reports the virtual SD card print state, including filename, total and print duration, filament used, state, error message, and print layer info. Inputs are filename, total_duration, print_duration, filament_used, state, message, and info. Outputs include detailed print statistics and state information.",
+            "virtual_sdcard",
+            "gcode_macro SAFE_HOME",
+            "heater_bed--> The heater_bed endpoint reports the state of the heated bed, including current temperature, target temperature, and current pwm value applied to the heater",
+            "fan",
+            "firmware_retraction",
+            "GET_RETRACTION --> Report firmware retraction paramters",
+            "motion_report",
+            "toolhead --> The 'toolhead' endpoint reports the current state of the tool. Inputs are various state parameters like 'homed_axes', 'print_time', 'estimated_print_time', 'extruder', 'position', 'max_velocity', 'max_accel', 'max_accel_to_decel', and 'square_corner_velocity'. Outputs include the state of these parameters, providing information such as homed axes, current extruder, and various velocity and acceleration limits.",
+            "extruder --> The 'extruder' endpoint reports the state of an extruder, including its current temperature, target temperature, power applied to the heater, pressure advance value, and smooth time for calculating average extruder velocity. "
+          ]
+
+    },
+
+    "change": {
+        "gcode": {
+            "commands": {
+            
+              "M115": {
+                "help": "Request firmware capabilities and version"
+              },
+              "STATUS": {
+                "help": "Report the printer status"
+              },
+              "G1": {
+                "help": "Move in a straight line to a specified position"
+              },
+              "G20": {
+                "help": "Set units to inches"
+              },
+              "G92": {
+                "help": "Set current position"
+              },
+              "M220": {
+                "help": "Set feedrate percentage"
+              },
+              "M221": {
+                "help": "Set flow rate percentage"
+              },
+              "SET_GCODE_OFFSET": {
+                "help": "Set a virtual offset to g-code positions"
+              },
+              "SAVE_GCODE_STATE": {
+                "help": "Save G-Code coordinate state"
+              },
+              "RESTORE_GCODE_STATE": {
+                "help": "Restore a previously saved G-Code state"
+              },
+              "G0": {
+                "help": "Rapid move"
+              },
+              "M114": {
+                "help": "Get current position"
+              },
+              "GET_POSITION": {
+                "help": "Return information on the current location of the toolhead"
+              },
+              "_CLIENT_EXTRUDE": {
+                "help": "Extrudes, if the extruder is hot enough"
+              },
+              "_CLIENT_RETRACT": {
+                "help": "Retracts, if the extruder is hot enough"
+              },
+              "UPDATE_DELAYED_GCODE": {
+                "help": "Update the duration of a delayed_gcode"
+              },
+              "FORCE_MOVE": {
+                "help": "Manually move a stepper; invalidates kinematics"
+              },
+              "SAFE_HOME": {
+                "help": "G-Code macro"
+              },
+              "G28": {
+                "help": "Home all axes"
+              },
+              "PROBE": {
+                "help": "Probe Z-height at current XY position"
+              },
+              "QUERY_PROBE": {
+                "help": "Return the status of the z-probe"
+              },
+              "PROBE_CALIBRATE": {
+                "help": "Calibrate the probe's z_offset"
+              },
+              "PROBE_ACCURACY": {
+                "help": "Probe Z-height accuracy at current XY position"
+              },
+              "Z_OFFSET_APPLY_PROBE": {
+                "help": "Adjust the probe's z_offset"
+              },
+              "M105": {
+                "help": "Get current temperatures"
+              },
+              "TEMPERATURE_WAIT": {
+                "help": "Wait for a temperature on a sensor"
+              },
+              "SET_HEATER_TEMPERATURE": {
+                "help": "Sets a heater temperature"
+              },
+              "M140": {
+                "help": "Set bed temperature"
+              },
+              "M190": {
+                "help": "Wait for bed temperature to reach target"
+              },
+              "M106": {
+                "help": "Fan on"
+              },
+              "M107": {
+                "help": "Fan off"
+              },
+              "SET_RETRACTION": {
+                "help": "Set firmware retraction parameters\n",
+                "usage": "SET_RETRACTION [RETRACT_LENGTH=<mm>] [RETRACT_SPEED=<mm/s>] [UNRETRACT_EXTRA_LENGTH=<mm>] [UNRETRACT_SPEED=<mm/s>]"
+              },
+              "GET_RETRACTION": {
+                "help": "Report firmware retraction parameters"
+              },
+              "G10": {
+                "help": "Retract filament"
+              },
+              "G11": {
+                "help": "Unretract filament"
+              },
+              "M18": {
+                "help": "Disable all stepper motors"
+              },
+              "M84": {
+                "help": "Stop idle hold on all axis"
+              },
+              "M119": {
+                "help": "Get endstop status"
+              },
+              "M400": {
+                "help": "Finish all moves"
+              },
+              "M204": {
+                "help": "Set default acceleration"
+              },
+              "SET_PRESSURE_ADVANCE": {
+                "help": "Set pressure advance parameters"
+              },
+              "M104": {
+                "help": "Set extruder temperature"
+              },
+              "M109": {
+                "help": "Wait for extruder temperature to reach target"
+              }
+            }
+          }
+          
+    }
+}

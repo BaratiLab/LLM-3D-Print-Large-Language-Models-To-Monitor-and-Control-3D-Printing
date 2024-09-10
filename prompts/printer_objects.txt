@@ -1,0 +1,110 @@
+printer_object={
+    "gcode": "list of gcode commands",
+    "gcode_move": 
+        ("speed_factor": "current speed multiplier",
+        "speed": "maximum limit of gcode speed in mm/s (Multiply with speed factor to get actual speed)",
+        "extrude_factor": "extrusion multiplier",
+        "absolute_coordinates": "true if using absolute coordinates",
+        "absolute_extrude": "true if extruder uses absolute coordinates",
+        "homing_origin": "gcode offset applied to each axis [X, Y, Z, E]",
+        "position": "internal gcode position with offsets [X, Y, Z, E]",
+        "gcode_position": "current gcode position without offsets [X, Y, Z, E]")
+    ,
+    "print_stats": "The 'print_stats' API endpoint, enabled with 'virtual_sdcard' in printer.cfg, reports the virtual SD card print state, including filename, total and print duration, filament used, state, error message, and print layer info. Inputs are filename, total_duration, print_duration, filament_used, state, message, and info. Outputs include detailed print statistics and state information.",
+
+    "heater_bed": "The heater_bed endpoint reports the state of the heated bed, including current temperature, target temperature, and current pwm value applied to the heater",
+
+    "fan": "current fan settings",
+
+    "firmware_retraction": "firmware retraction",
+
+    "GET_RETRACTION": "Report current retraction parameters",
+
+    "toolhead": "The 'toolhead' endpoint reports the current state of the tool. Inputs are various state parameters like 'homed_axes', 'print_time', 'estimated_print_time', 'extruder', 'position', 'max_velocity', 'max_accel', 'max_accel_to_decel', and 'square_corner_velocity'. Outputs include the state of these parameters, providing information such as homed axes, current extruder, and various velocity and acceleration limits.",
+    
+    "extruder": "The 'extruder' endpoint reports the state of an extruder, including its current temperature, target temperature, power applied to the heater, pressure advance value, and smooth time for calculating average extruder velocity."
+}
+
+G_CODE = {
+    "BED_MESH_MAP": {
+        "description": "Serialize mesh and output to terminal"
+    },
+    "BED_MESH_OFFSET": {
+        "description": "Add X/Y offsets to the mesh lookup"
+    },
+    "BED_MESH_OUTPUT": {
+        "description": "Retrieve interpolated grid of probed z-points"
+    },
+    "GET_RETRACTION": {
+        "description": "Report firmware retraction parameters"
+    },
+    "PROBE": {
+        "description": "Probe Z-height at current XY position"
+    },
+    "PROBE_ACCURACY": {
+        "description": "Probe Z-height accuracy at current XY position"
+    },
+    "PROBE_CALIBRATE": {
+        "description": "Calibrate the probe's z_offset"
+    },
+    "QUERY_ADC": {
+        "description": "Report the last value of an analog pin"
+    },
+    "QUERY_ENDSTOPS": {
+        "description": "Report on the status of each endstop"
+    },
+    "QUERY_PROBE": {
+        "description": "Return the status of the z-probe"
+    },
+    "M115": {
+        "description": "Request firmware capabilities and version"
+    },
+    "STATUS": {
+        "description": "Report the printer status"
+    },
+    "SAVE_GCODE_STATE": {
+        "description": "Save G-Code coordinate state"
+    },
+    "RESTORE_GCODE_STATE": {
+        "description": "Restore a previously saved G-Code state"
+    },
+    "G0": {
+        "description": "Rapid move"
+    },
+    "M114": {
+        "description": "Get current position"
+    },
+    "GET_POSITION": {
+        "description": "Return information on the current location of the toolhead"
+    },
+    "PROBE": {
+        "description": "Probe Z-height at current XY position"
+    },
+    "QUERY_PROBE": {
+        "description": "Return the status of the z-probe"
+    },
+    "PROBE_CALIBRATE": {
+        "description": "Calibrate the probe's z_offset"
+    },
+    "PROBE_ACCURACY": {
+        "description": "Probe Z-height accuracy at current XY position"
+    },
+    "Z_OFFSET_APPLY_PROBE": {
+        "description": "Adjust the probe's z_offset"
+    },
+    "M105": {
+        "description": "Get current temperatures"
+    },
+    "TEMPERATURE_WAIT": {
+        "description": "Wait for a temperature on a sensor"
+    },
+    "GET_RETRACTION": {
+        "description": "Report firmware retraction parameters"
+    },
+    "M119": {
+        "description": "Get endstop status"
+    },
+    "M400": {
+        "description": "Finish all moves"
+    }
+}

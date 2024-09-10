@@ -1,0 +1,12 @@
+[1. What are the possible reasons for the failure?,
+2. How to solve the problem in the next layer without human intervention?,
+3. What information do you already know?,
+4. What additional information do you need to solve the task effectively and autonomously?,
+5. What information can be acquired from the basic 3D printer without human intervention to identify the cause of failure?,
+6. What information can be requires human intervention?,
+7. What are the environmental conditions?,
+8. What are the controllable parameters that can be changed to solve the failure in the next layer?
+9. Based on the observations what are the failure modes you can identify in the ongoing print?
+10. Based on the failure modes and observations, which issues are most likely to cause significant issues to the print quality and integrity?
+11. What printer parameters is most responsible for these observations and issues?
+12. What are the parameters which when changed will have the most impact on the quality of the 3D print.]

@@ -1,0 +1,23 @@
+[   
+    
+    "1. What are the possible reasons for the observations and failure in the last layer?",
+    "2. Analyze the information and data you already have regarding the documentation, print parameters, and material properties during the failure.",
+    "3. Given the current print parameters [given information known] as observed during ,the last layer, what are the best parameters to adjust to solve the failure in the next layer without human intervention?",
+    "4. What are the controllable parameters that can be changed to solve the failure in the next layer?",
+    "5. How would you solve the problems without human intervention?",
+    "6. Break down the problem into smaller parts and identify the most significant ,contributing factors to the failure. Consider aspects such as material properties, print parameters, and potential G-code commands to use.",
+    "7. What solution does a human need to perform to solve the problem in the next layer without discarding the print?",
+    "8. What solution does the machine need to perform to solve the problem in the next layer without discarding the print?",
+   " 9. Provide step-by-step instructions to solve the problem in the next layer without discarding the print or using human intervention.",
+    "10. Given the commands specific to the printer, what commands should be used to solve the problem in the next layer without discarding the print?",
+    "11. What parameters, when changed, will impact the quality of the 3D print?",
+    "12. What should be the correct values for the parameter changes?",
+    "13. Are the parameter values like bed temperature, extruder temperature, speed factor, extrusion factor, etc., correct for the given filament type?",
+    "14. How can you optimize the cooling settings to improve print quality?",
+    "15. How can adjusting the retraction settings help solve the observed failures?",
+    "16. What adjustments to the layer height or width could improve print consistency?",
+    "17. Based on the observations what is failure modes?",
+    "18. Given current parameters values and information known what would be the best values for them so that the problem is solved in the next segment/layer?",
+    "19. Are there other parameters to consider? what are those? what should be the values?"
+
+]
