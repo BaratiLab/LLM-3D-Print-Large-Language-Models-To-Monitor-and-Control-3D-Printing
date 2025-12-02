@@ -29,3 +29,15 @@ install Klipper firmware.
 3. Results and run log for multilayer prints as presented in the paper are in results_2.zip
 4. Result and run log for video in results_3.zip
 5. Multi Layer print Gcode in Gcode file.
+
+
+### Cite Us:
+
+@article{jadhav2025llm,
+  title={Llm-3D print: large language models to monitor and control 3D printing},
+  author={Jadhav, Yayati and Pak, Peter and Farimani, Amir Barati},
+  journal={Additive Manufacturing},
+  pages={105027},
+  year={2025},
+  publisher={Elsevier}
+}
