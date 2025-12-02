@@ -33,6 +33,9 @@ install Klipper firmware.
 
 ### Cite Us:
 
+If you use this work, please cite:
+
+```bibtex
 @article{jadhav2025llm,
   title={Llm-3D print: large language models to monitor and control 3D printing},
   author={Jadhav, Yayati and Pak, Peter and Farimani, Amir Barati},
